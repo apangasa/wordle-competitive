@@ -6,10 +6,10 @@ import json
 
 def populate_words(current_words: set, new_words: set):
     current_words.update(new_words)
-    return words
+    return current_words
 
 
-if __name__ == '__main__':
+def main():
     words = set()
 
     # Add words from NLTK WordNet
@@ -20,3 +20,7 @@ if __name__ == '__main__':
 
     with open('./valid_words.json', 'w') as word_file:
         json.dump(list(words), word_file)
+
+
+if __name__ == '__main__':
+    main()
