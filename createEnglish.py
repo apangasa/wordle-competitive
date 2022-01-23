@@ -28,6 +28,8 @@ def main():
     # Add words from https://svnweb.freebsd.org/csrg/share/dict/
     words = populate_words(words, set(english_words.english_words_set))
 
+    words = set(map(lambda word: word.upper(), words))
+
     write_to_json('./valid_words.json', list(words))
 
     for length in DEFAULT_LENGTHS:
