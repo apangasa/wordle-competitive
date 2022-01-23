@@ -4,9 +4,9 @@ import numpy as np
 
 def load_words(length: int = None) -> None:
     words = None
-    fname = './valid_words.json'
+    fname = './data/valid_words.json'
     if length is not None:
-        fname = f'./valid_words_{length}.json'
+        fname = f'./data/valid_words_{length}.json'
 
     with open(fname, 'r') as word_file:
         words = json.load(word_file)
@@ -15,9 +15,9 @@ def load_words(length: int = None) -> None:
 
 def load_answers(length: int = None) -> None:
     words = None
-    fname = './answers.json'
+    fname = './data/answers.json'
     if length is not None:
-        fname = f'./answers_{length}.json'
+        fname = f'./data/answers_{length}.json'
 
     with open(fname, 'r') as word_file:
         words = json.load(word_file)

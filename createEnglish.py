@@ -42,16 +42,17 @@ def main():
     words = set(map(lambda word: word.upper(), words))
     answers = set(filter(lambda word: frequency_is_above(word), words))
 
-    write_to_json('./valid_words.json', list(words))
-    write_to_json('./answers.json', list(answers))
+    write_to_json('./data/valid_words.json', list(words))
+    write_to_json('./data/answers.json', list(answers))
 
     for length in DEFAULT_LENGTHS:
         filtered_words = list(filter(lambda word: len(word) == length, words))
         filtered_answers = list(
             filter(lambda word: frequency_is_above(word), filtered_words))
 
-        write_to_json(f'./valid_words_{length}.json', list(filtered_words))
-        write_to_json(f'./answers_{length}.json', list(filtered_answers))
+        write_to_json(
+            f'./data/valid_words_{length}.json', list(filtered_words))
+        write_to_json(f'./data/answers_{length}.json', list(filtered_answers))
 
 
 if __name__ == '__main__':
