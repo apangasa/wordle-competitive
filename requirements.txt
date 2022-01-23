@@ -1,2 +1,3 @@
 nltk
 english-words
+wordfreq
