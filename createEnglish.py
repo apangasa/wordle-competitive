@@ -39,7 +39,10 @@ def main():
     # Add words from https://svnweb.freebsd.org/csrg/share/dict/
     words = populate_words(words, set(english_words.english_words_set))
 
+    # Standardize and validate words
+    words = set(filter(lambda word: word.isalpha(), words))
     words = set(map(lambda word: word.upper(), words))
+
     answers = set(filter(lambda word: frequency_is_above(word), words))
 
     write_to_json('./data/valid_words.json', list(words))
